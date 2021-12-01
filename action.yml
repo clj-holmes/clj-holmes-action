@@ -1,6 +1,6 @@
-name: 'clj-holmes'
+name: 'clj-holmes (Clojure)'
 author: 'clj-holmes'
-description: 'execute clj-holmes scan'
+description: 'Executes clj-holmes security scan in clojure/clojurescript projects.'
 inputs:
   rules-repository:
     description: 'repository containing all the rules'
