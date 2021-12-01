@@ -1,0 +1,14 @@
+name: 'clj-holmes'
+author: 'clj-holmes'
+description: 'execute clj-holmes scan'
+inputs:
+  rules-repository:
+    description: 'repository containing all the rules'
+    required: false
+    default: 'git://clj-holmes/clj-holmes-rules#main'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.rules-repository }}
