@@ -16,6 +16,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.rules-repository }}
+    - ${{ inputs.output-type }}
 
 branding:
  color: gray-dark
