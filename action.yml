@@ -6,6 +6,10 @@ inputs:
     description: 'repository containing all the rules'
     required: false
     default: 'git://clj-holmes/clj-holmes-rules#main'
+  output-type:
+    description: 'Output type'
+    required: false
+    default: 'sarif'
 
 runs:
   using: 'docker'

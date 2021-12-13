@@ -10,12 +10,13 @@ Simply add the following snippet to your GitHub actions workflow.
   uses: clj-holmes/clj-holmes-action@main
 ```
 
-It's also possible to specify a custom rule-repository (public or private)
+It's also possible to specify a custom rule-repository (public or private) and the output-type (sarif or stdout)
 ```
 - name: Scan
   uses: clj-holmes/clj-holmes-action@main
   with:
     rules-repository: 'git://org/private-rules-repo#main'
+    output-type: 'stdout'
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
