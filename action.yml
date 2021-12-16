@@ -10,6 +10,10 @@ inputs:
     description: 'Output type'
     required: false
     default: 'sarif'
+  output-file:
+    description: 'Output file'
+    required: false
+    default: 'clj_holmes_scan_results.txt'
   fail-on-result:
     description: 'Enable or disable fail if results were found'
     required: false
@@ -21,6 +25,7 @@ runs:
   args:
     - ${{ inputs.rules-repository }}
     - ${{ inputs.output-type }}
+    - ${{ inputs.output-file }}
     - ${{ inputs.fail-on-result }}
 
 branding:
