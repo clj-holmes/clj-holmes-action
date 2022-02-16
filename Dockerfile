@@ -1,11 +1,8 @@
-FROM ubuntu:latest
+FROM ghcr.io/clj-holmes/clj-holmes:main
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y curl
+RUN apt-get update && apt-get upgrade -y 
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-RUN curl -L https://github.com/clj-holmes/clj-holmes/releases/latest/download/clj-holmes-ubuntu-latest -o /usr/bin/clj-holmes
-RUN chmod +x /usr/bin/clj-holmes
 
 ENTRYPOINT ["/entrypoint.sh"]
