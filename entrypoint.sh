@@ -5,6 +5,12 @@ output_type="$2"
 output_file="$3"
 fail_on_result="$4"
 
+if [[ $no_verbose == "true" ]]; then
+    no_verbose_cmd="--no-verbose"
+else
+    no_verbose_cmd=""
+fi
+
 if [[ $fail_on_result == "true" ]]; then
   fail_on_result_cmd="--fail-on-result";
 else
@@ -19,4 +25,4 @@ fi
 
 cd /github/workspace/
 clj-holmes fetch-rules -r "$rules_repository"
-clj-holmes scan -p . $fail_on_result_cmd $output_cmd
+clj-holmes scan -p . $fail_on_result_cmd $no_verbose_cmd $output_cmd
