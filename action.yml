@@ -18,6 +18,10 @@ inputs:
     description: 'Enable or disable fail if results were found'
     required: false
     default: 'false'
+  verbose:
+    description: 'Enable or disable printing the progress bar'
+    required: false
+    default: 'false'
 
 runs:
   using: 'docker'
@@ -27,6 +31,7 @@ runs:
     - ${{ inputs.output-type }}
     - ${{ inputs.output-file }}
     - ${{ inputs.fail-on-result }}
+    - ${{ inputs.verbose }}
 
 branding:
  color: gray-dark
