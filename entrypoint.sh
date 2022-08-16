@@ -4,12 +4,12 @@ rules_repository="$1"
 output_type="$2"
 output_file="$3"
 fail_on_result="$4"
-working_directory="$5"
+path="$5"
 
 if [[ -d ${working_directory} ]]; then
-  working_directory="/github/workspace/${working_directory}"
+  path="/github/workspace/${path}"
 else
-  working_directory="/github/workspace/"
+  path="/github/workspace/"
 fi
 
 if [[ $verbose == "true" ]]; then
@@ -30,6 +30,6 @@ else
   output_cmd="-t $output_type -o $output_file";
 fi
 
-cd ${working_directory}
+cd ${path}
 clj-holmes fetch-rules -r "$rules_repository"
 clj-holmes scan -p . $fail_on_result_cmd $verbose_cmd $output_cmd

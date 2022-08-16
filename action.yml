@@ -22,7 +22,7 @@ inputs:
     description: 'Enable or disable printing the progress bar'
     required: false
     default: 'false'
-  working-directory:
+  path:
     description: 'Directory to run clj-holmes on'
     required: false
 
@@ -35,7 +35,7 @@ runs:
     - ${{ inputs.output-file }}
     - ${{ inputs.fail-on-result }}
     - ${{ inputs.verbose }}
-    - ${{ inputs.working-directory }}
+    - ${{ inputs.path }}
 
 branding:
  color: gray-dark
