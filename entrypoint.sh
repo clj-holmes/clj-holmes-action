@@ -8,6 +8,7 @@ path="$5"
 
 if [[ -d "${path}" ]]; then
   cd "${path}"
+fi
 
 if [[ $verbose == "true" ]]; then
     verbose_cmd="--verbose"
